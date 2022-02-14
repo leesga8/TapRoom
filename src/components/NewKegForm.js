@@ -29,7 +29,7 @@ function NewKegForm(props){
           type='text'
           name='alcoholContent'
           placeholder='Alcohol Content' />
-        <button type='submit' class='btn btn-primary'>Add Keg!</button>
+        <button type='submit'>Add Keg!</button>
       </form>
     </React.Fragment>
   );
