@@ -10,8 +10,10 @@ function Keg(props){
   return (
     <React.Fragment>
     <div style={KegStyles}>
-      <h1>{props.brand} - {props.name}</h1>
-      <p>{props.price} - {props.alcoholContent}</p>
+      <h3>Brand: {props.brand}</h3>
+      <h3>Name: {props.name}</h3>
+      <p>Price: $ {props.price}</p> 
+      <p>Alcohol Content: {props.alcoholContent}%</p>
       <hr />
     </div>
     </React.Fragment>
