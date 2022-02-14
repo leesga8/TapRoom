@@ -1,4 +1,45 @@
+# Tap Room
+
+This website allows users of a TapRoom to create kegs, view details, and sell pints.
+
 <img src="./src/img/Component Diagram.png">
+
+## Technologies Used
+
+* React
+* Javascript
+* HTML
+* JSX
+* CSS
+* Node.js/Webpack
+
+## Installation / Setup
+
+* Clone or download project
+
+  `$ git clone https://github.com/CharWeber/Tap-Room`
+
+* Inside project directory, run using
+
+      `$ npm run start`
+
+
+## Known Bugs
+
+* _NA_
+
+## License
+_[GPL](https://opensource.org/licenses/gpl-license)_
+
+## Contact Information
+Albert Lee - leesga@gmail.com
+
+
+
+
+
+
+
 
 # Getting Started with Create React App
 
