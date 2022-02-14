@@ -21,20 +21,21 @@ This website allows users of a TapRoom to create kegs, view details, and sell pi
 
 * Inside project directory, run using
 
-      `$ npm run start`
-
+  `$ npm run start`
 
 ## Known Bugs
 
-* _NA_
+* _No known bugs_
 
 ## License
-_[GPL](https://opensource.org/licenses/gpl-license)_
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2021 Albert Lee
 
 ## Contact Information
-Albert Lee - leesga@gmail.com
 
-
+Albert Lee: <leesga8@gmail.com>
 
 
 

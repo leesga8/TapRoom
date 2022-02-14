@@ -1,7 +1,7 @@
 import React from 'react';
 import NewKegForm from './NewKegForm';
 import KegList from './KegList';
-import KegDetail from './KegDetail';
+import KegDetail from './KegDetails';
 
 class KegControl extends React.Component {
 
@@ -46,6 +46,14 @@ class KegControl extends React.Component {
       selectedKeg: null
     });
   }
+
+  handleSellPint = (id) => {
+    let selectedKeg = this.state.mainKegList.find(keg => keg.id === id);
+    selectedKeg.pint--;
+    const newMainKegList = this.state.mainKegList.map((keg) => {return keg.id === id ? selectedKeg : keg});
+    this.setState({mainKegList: newMainKegList});
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -58,7 +66,7 @@ class KegControl extends React.Component {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}  />;
       buttonText = "Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection={this.handleChangingSelectedKeg} />;
+      currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection={this.handleChangingSelectedKeg} onSellPintClicked = {this.handleSellPint}/>;
       buttonText = "Add Keg";
     }
 
