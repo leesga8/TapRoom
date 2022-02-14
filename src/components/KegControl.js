@@ -15,10 +15,17 @@ class KegControl extends React.Component {
     // this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick = () => {   
+  handleClick = () => {
+    if (this.state.selectedKeg != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedKeg: null
+      });
+    } else {
       this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
   }
 
   handleAddingNewKegToList = (newKeg) => {
@@ -36,17 +43,22 @@ class KegControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     
-    if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
+    if (this.state.selectedKeg != null) {
+      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} />
+      buttonText = "Return to Keg List";
+    }
+    else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}  />;
       buttonText = "Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.mainKegList} />; // new code
-      buttonText = "Add Keg"; 
+      currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection={this.handleChangingSelectedKeg} />;
+      buttonText = "Add Keg";
     }
+
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button class="btn btn-primary" onClick={this.handleClick}>{buttonText}</button>
+        <button onClick={this.handleClick}>{buttonText}</button>
       </ React.Fragment>
     );
   }

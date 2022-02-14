@@ -5,11 +5,10 @@ function Keg(props){
   const KegStyles = {
     backgroundColor: '#ecf0f1',
     fontFamily: 'sans-serif',
-    paddingTop: '50px'
   }
   return (
     <React.Fragment>
-    <div style={KegStyles}>
+    <div style={KegStyles} onClick = {() => props.whenKegClicked(props.id)}>
       <h3>Brand: {props.brand}</h3>
       <h3>Name: {props.name}</h3>
       <p>Price: $ {props.price}</p> 
@@ -24,7 +23,8 @@ Keg.propTypes = {
   name: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  alcoholContent: PropTypes.string.isRequired
+  alcoholContent: PropTypes.string.isRequired,
+  whenKegClicked: PropTypes.func
 }
 
 export default Keg;
